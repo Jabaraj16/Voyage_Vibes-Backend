@@ -40,3 +40,13 @@ exports.login=async(req,res)=>{
         res.status(401).json(err)
     }
 }
+exports.deleteAccount=async(req,res)=>{
+    const userId=req.payload
+
+   try{
+    const deleted=await users.findByIdAndDelete({_id:userId})
+    res.status(200).json(deleted)
+   }catch(err){
+    res.status(401).json(err)
+   }
+}

@@ -13,5 +13,6 @@ router.get("/allplace",jwtMiddleWare,placeController.getAllProject)
 router.get("/userplace",jwtMiddleWare,placeController.getUserPlace)
 router.put("/place/edit/:pid",jwtMiddleWare,multerConfig.single("placeImage"),placeController.ediitPlace)
 router.delete("/place/delete/:pid",jwtMiddleWare,placeController.removePlace)
+router.delete("/profile/delete",jwtMiddleWare,userController.deleteAccount)
 
 module.exports=router
